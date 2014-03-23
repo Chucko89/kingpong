@@ -2,7 +2,7 @@ app = require('../app')
 
 
 app.get('/', function(req, res) {
-	res.render('index', { title: 'King Pong' })
+	res.render('index')
 })
 
 app.get('/login', function(req, res){
