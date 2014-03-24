@@ -5,5 +5,29 @@
     <h1>Welcome to King Pong</h1>
     <br>
     <h3>Here are the current standings for KISSmetrics:</h3>
+
+    <form method="POST" id="addUser">
+      <input type="text" name="newUser" placeholder="enter your name...">
+      <input type="submit" value="Submit">
+    </form>
+
+
+      <br>
+      <br>
+
+    <form method="POST" id="updateRating">
+            <select>
+        <% for (i=0;i<users.length;i++){ %>
+          <option value="<%= users[i].name %>"><%= users[i].name %></option>
+        <% } %>
+      </select>
+            <select>
+        <% for (i=0;i<users.length;i++){ %>
+          <option value="<%= users[i].name %>"><%= users[i].name %></option>
+        <% } %>
+      </select>
+      <input type="submit" value="Submit">
+    </form>
+
   </body>
 </html>

@@ -1,7 +1,14 @@
 var app = require('../app')
 var User = require('../models/user')
-var Score = require('../models/score')
 
 app.get('/', function(req, res) {
-	res.render('index')
+  var userRating = User.find(function(err,data){
+    res.render('index', { users: data })
+  })
+})
+
+app.post('/user', function(req, res){
+  var user = new User({name: req.body.newUser})
+  user.save()
+  console.log(user)
 })
