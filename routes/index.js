@@ -8,7 +8,7 @@ app.get('/', function(req, res) {
 })
 
 app.post('/user', function(req, res){
-  var user = new User({name: req.body.newUser})
+  var user = new User({name: req.body.newUser, rating: 1200})
   user.save()
   console.log(user)
 })
