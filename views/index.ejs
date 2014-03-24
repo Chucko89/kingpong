@@ -16,18 +16,17 @@
       <br>
 
     <form method="POST" id="updateRating">
-            <select>
+      <select name="player1">
         <% for (i=0;i<users.length;i++){ %>
           <option value="<%= users[i].name %>"><%= users[i].name %></option>
         <% } %>
       </select>
-            <select>
+      <select name="player2">
         <% for (i=0;i<users.length;i++){ %>
           <option value="<%= users[i].name %>"><%= users[i].name %></option>
         <% } %>
       </select>
       <input type="submit" value="Submit">
     </form>
-
   </body>
 </html>
