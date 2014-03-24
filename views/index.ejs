@@ -14,18 +14,21 @@
 
       <br>
       <br>
-
+    <span>Player</span><span style="margin-left: 50px;">Score</span>
     <form method="POST" id="updateRating">
       <select name="player1">
         <% for (i=0;i<users.length;i++){ %>
           <option value="<%= users[i].name %>"><%= users[i].name %></option>
         <% } %>
       </select>
+      <input type="number" name="p1_score">
+      <br>
       <select name="player2">
         <% for (i=0;i<users.length;i++){ %>
           <option value="<%= users[i].name %>"><%= users[i].name %></option>
         <% } %>
       </select>
+      <input type="number" name="p2_score">
       <input type="submit" value="Submit">
     </form>
   </body>
