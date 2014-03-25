@@ -3,8 +3,21 @@
 <%- include __head.ejs %>
   <body>
     <h1>Welcome to King Pong</h1>
+
     <br>
+
     <h3>Here are the current standings for KISSmetrics:</h3>
+    <table style="width:400px">
+      <% for (i=0;i<users.length;i++){ %>
+        <tr>
+          <td><%= users[i].name %></td>
+          <td><%= users[i].rating %></td>
+        </tr>
+      <% } %>
+    </table>
+
+      <br>
+      <br>
 
     <form method="POST" id="addUser">
       <input type="text" name="newUser" placeholder="enter your name...">
@@ -14,6 +27,7 @@
 
       <br>
       <br>
+
     <span>Player</span><span style="margin-left: 50px;">Score</span>
     <form method="POST" id="updateRating">
       <select name="player1">
