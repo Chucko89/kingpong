@@ -38,8 +38,10 @@ app.post('/game', function(req, res){
       var e = 100 - Math.round(1 / (1 + Math.pow(10, ((loser_record.rating - winner_record.rating) / 400))) * 100);
       console.log(e, winner_record.rating)
       winner_record.rating = winner_record.rating + e;
+      winner_record.wins += 1
       winner_record.save()
       loser_record.rating = loser_record.rating - e;
+      loser_record.losses += 1
       loser_record.save()
     });
   });
