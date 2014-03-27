@@ -4,7 +4,9 @@ var Game = require('../models/game')
 
 app.get('/', function(req, res) {
   User.find().sort({ rating: 'desc'}).exec(function(err, data){
-    res.render('index', { users: data })
+    Game.find().limit(10).exec(function(game_err, games){
+      res.render('index', { users: data, games: games})
+    })
   });
 })
 

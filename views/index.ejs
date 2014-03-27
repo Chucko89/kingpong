@@ -6,6 +6,29 @@
 
     <br>
 
+  <h3>Recent Matches:</h3>
+    <table style="width:400px">
+      <thead>
+        <tr>
+          <td>Winner name</td>
+          <td>Winner score</td>
+          <td>Loser name</td>
+          <td>Loser score</td>
+        </tr>
+      </thead>
+      <tbody>
+      <% for (i=0;i<games.length;i++){ %>
+        <tr>
+          <td><%= games[i].winner.name %></td> <td><%= games[i].winner.score %></td>
+          <td><%= games[i].loser.name %></td> <td><%= games[i].loser.score %></td>
+        </tr>
+      <% } %>
+    </tbody>
+    </table>
+
+    <br>
+    <br>
+
     <h3>Here are the current standings for KISSmetrics:</h3>
     <table style="width:400px">
       <% for (i=0;i<users.length;i++){ %>
@@ -15,9 +38,6 @@
         </tr>
       <% } %>
     </table>
-
-    <br>
-    <br>
 
     <h3>Add a new user:</h3>
     <form method="POST" id="addUser">
