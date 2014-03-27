@@ -3,9 +3,9 @@ var User = require('../models/user')
 var Game = require('../models/game')
 
 app.get('/', function(req, res) {
-  var userRating = User.find(function(err,data){
+  User.find().sort({ rating: 'desc'}).exec(function(err, data){
     res.render('index', { users: data })
-  })
+  });
 })
 
 app.post('/user', function(req, res){
@@ -50,4 +50,3 @@ app.post('/game', function(req, res){
 
   game.save()
 });
-
