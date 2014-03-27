@@ -1,6 +1,6 @@
 exports.init = function(){
   var mongoose = require('mongoose');
-  mongoose.connect('mongodb://localhost/test');
+  mongoose.connect('mongodb://charlie:kiss@oceanic.mongohq.com:10051/kingpong');
 
   var db = mongoose.connection;
   db.on('error', console.error.bind(console, 'connection error:'));
